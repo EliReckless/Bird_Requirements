@@ -1,0 +1,73 @@
+---
+title: "Bird Classifier Requirement Analysis"
+author: "Peter Aichinger-Frankhauser, Jens Barkshat, Robert Bartz, Michael Holzinger, Elias Reckmeyer & Viviane Aicher"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    df_print: paged
+---
+
+
+# 1. INTRODUCTION
+
+Ever seen a bird in your garden and wondered what kind of bird it is? 
+Now you can simply let AI classify your bird. Just take a picture of it and upload it to our webpage. The algorithm will tell you what kind of bird it is. (Currently only 3 kinds of birds will be detected).
+
+## 1.1 PURPOSE
+
+The aim of the project is to build a webpage where users can upload their bird pictures in order to classify them.
+At first only three categories of birds will be detected: Great tit, robin and sparrow.
+
+## 1.2 INTENDED AUDIENCE
+
+Everybody who loves nature and has a gitHub account...
+
+## 1.3 INTENDED USE
+
+Just for fun...
+
+## 1.4 SCOPE
+
+Specification including benefits, objectives, and goals.
+
+## 1.5 DEFINITIONS AND ACRONYMS
+
+Risk of false detection, failing upload, wrong picture formats...
+
+
+
+# 2. OVERALL DESCRIPTION
+
+## 2.1 USER NEEDS
+
+
+## 2.2 ASSUMPTIONS AND DEPENDENCIES
+
+
+
+# 3. SYSTEM FEATURES AND REQUIREMENTS
+
+## 3.1 FUNCTIONAL REQUIREMENTS
+
+## 3.2 TECHNICAL REQUIREMENTS
+
+## 3.3 QUALITY OF SERVICE REQUIREMENTS
+
+## 3.4 USER INTERFACE REQUIREMENTS
+
+## 3.5 EXTERNAL INTERFACE REQUIREMENTS
+
+## 3.6 EXTERNAL DELIVERABLE/INTERFACE REQUIREMENTS
+
+## 3.7 ACTIVITY REQUIREMENTS
+
+## 3.8 SECURITY REQUIREMENTS
+
+## 3.9 LEGAL & CONTRACT REQUIREMENTS
+
+
+
+# 4. APPROVAL
+
+Approval by key stakeholders is needed after the definition of the requirements.
