@@ -71,3 +71,9 @@ Risk of false detection, failing upload, wrong picture formats...
 # 4. APPROVAL
 
 Approval by key stakeholders is needed after the definition of the requirements.
+
+
+
+
+
+
