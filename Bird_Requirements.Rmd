@@ -70,7 +70,7 @@ Beispiel
 -Spielen sie die Pipeline für die Entw. Eines Features durch!
 <<<<<<<<<<<<<<<<<<<
 
-6.
+6. Übernimmt Michael Holzinger
 >>>>>>>>>>>>>>>>>>>
 - Welche Art von Data-Science-Architektur würde für Ihr Projekt passen?
 - Wie könnte diese aussehen?
