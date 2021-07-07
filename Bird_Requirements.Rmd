@@ -29,7 +29,7 @@ Welche Web-Technologien braucht Ihr Data Science System?
 gespeichert?
 <<<<<<<<<<<<<<<<<<
 
-3.
+3. übernimmt Viv
 >>>>>>>>>>>>>>>>>>
 - Entwickeln Sie ein einfaches Architekturmodellfür Ihren Use Case!
 - Welche Architektur würden Sie  wählen, warum?
