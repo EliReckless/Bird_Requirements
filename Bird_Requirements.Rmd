@@ -169,6 +169,10 @@ As a collaboration and CI/CD platform GitLab is used hosted by the FH Kufstein.
 The web app is programmed with streamlit for the first release. However a change to flask that is more flexible might be intended in a later state.
 The deployment for now will be on heroku, a platform hosted by Salesforce, that provides some limited free space for small applications. As the model grows, this deployment strategy might also be subject to change, depending on the required capacity of the app and the offers of maybe new emerging companies offering free cloud space.
 
+Logging has to be used for recording and traceability of error states in the software process. Since an evaluation by administrators and software developers is planned and the content might be subject to legal restrictions, it must not contain any confidential information. The bird classifier should log the usage of the webpage as well as uploading errors with the format of the pictures. If there are many pictures of a certain format uploaded, the format should be added to the allowed files. In case any error occurs on the webpage, the logging should record this as well.
+
+Currently the uploaded image by the user is always replaced by the new uploaded picture. In future the pictures should be saved as well as the logging and the predicted accurracies. Thus a database connection will be needed at a later release state.
+
 ### Specific technical requirements
 
 For the classification of the bird image we need to resize and reshape the uploaded and preprocessed image from the user to a numpy array format in float32.
