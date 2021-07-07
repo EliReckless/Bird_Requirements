@@ -12,35 +12,35 @@ output:
 # Anforderungen und Aufgaben Lukas Huber:
 
 1. 
->>>>>>>>>>>>>>>>>
+
 Finden Sie Veränderungen der Requirements für Ihr System, die
 wahrscheinlich eintreten könnten:
 - Veränderung des Daten-liefernden Systems
 - Mehrere Standorte/Formate/Systeme/Umstände mit denen Ihr System
 umgehen können „soll“/“muss“
-<<<<<<<<<<<<<<<<<
+
 
 2.
->>>>>>>>>>>>>>>>>><<
+
 Welche Web-Technologien braucht Ihr Data Science System?
 - z.B. eine App, mit Server im Hintergrund,
 - z.B. eine Schnittstelle, für andere Webseiten,...
 - Welche Modelle, Datenbanken, Technologien möchte/sollte man einsetzen? Wo/Wie wird
 gespeichert?
-<<<<<<<<<<<<<<<<<<
+
 
 3. übernimmt Viv
->>>>>>>>>>>>>>>>>>
+
 - Entwickeln Sie ein einfaches Architekturmodellfür Ihren Use Case!
 - Welche Architektur würden Sie  wählen, warum?
 - Welche Art von Schnittstellen wären notwendig? Welche denkbar? Welche möglich?
 - Wie können Sie „Messaging“ nutzen?
 - Welche Informationen können Sie aus „Log“-Dateien extrahieren?
 - Wie könnten Sie über „Internationalisierung stolpern“ – (nicht nur Kunden aus diversen Ländern)?
-<<<<<<<<<<<<<<<<<
+
 
 4.
->>>>>>>>>>>>>>>>>
+
 - README.md
 - Requirements/
 - my_requirement diagram
@@ -51,10 +51,10 @@ gespeichert?
 - Design content
 - + Fiktive Umsetzung (z.b. .gitlab-ci.yml, test.py,…)
 - + Verwendung von Git-Versionierung, Branches, Tags.
-<<<<<<<<<<<<<<<<
+
 
 5.
->>>>>>>>>>>>>>>>>>>>>>
+
 - Entwerfen Sie ihr (hypothetisches) Entwicklungsmodell (Vorgehen) – für Ihr
 Beispiel
 - Beschreiben Sie dazu, wie Sie vorgehen
@@ -68,15 +68,15 @@ Beispiel
 - Welche Design Patterns können Sie Verwenden?
 - Wie könnte eine CI/CD-Pipeline aussehen?
 -Spielen sie die Pipeline für die Entw. Eines Features durch!
-<<<<<<<<<<<<<<<<<<<
+
 
 6. Übernimmt Michael Holzinger
->>>>>>>>>>>>>>>>>>>
+
 - Welche Art von Data-Science-Architektur würde für Ihr Projekt passen?
 - Wie könnte diese aussehen?
 - Warum nicht ein anderer Ansatz?
 - Wie könnten Pipelines Verwendung finden?
-<<<<<<<<<<<<<<<<<<<
+
 
 
 # 1. INTRODUCTION
@@ -91,29 +91,38 @@ At first only three categories of birds will be detected: Great tit, robin and s
 
 ## 1.2 INTENDED AUDIENCE
 
-Everybody who loves nature and has a gitHub account...
+The intended users are bird interested people and ornithologists.
 
 ## 1.3 INTENDED USE
 
-Just for fun...
+Detect bird species from bird picture.
 
 ## 1.4 SCOPE
 
-Specification including benefits, objectives, and goals.
+The scope of the first release should be a working webpage where great tit, robin and sparrow pictures in jpg and png format can be uploaded, rotated and sharpended by the user in order to classify the bird species shown in the picture.
 
 ## 1.5 DEFINITIONS AND ACRONYMS
 
-Risk of false detection, failing upload, wrong picture formats...
+There are potential risks in the development and deployment of the product, for example the classification could be wrong, the upload of the user picture could fail due to wrong picture formats or the webpage could be offline.
+In order to minimize these risks, testing will be implemented and the webserver will be hosted with an external company that has the competence to maintain the webapp 24/7.
 
+In later releases when more birds can be classified and the tool is maybe used in an international context, new birds species that are rare might be needed to classify. However a certain amount of pictures is needed to train the model. If these pictures are not available on the internet or the training of the model already takes very long, those birds will not be able to be classified by the tool.
 
 
 # 2. OVERALL DESCRIPTION
 
 ## 2.1 USER NEEDS
 
+The target group for our web app are ornithologists as well as bird interested people that would like to know which birds they have seen and been able to take pictures of. In later release states also environmentalists and city officials might be interested in the app when the location and time of the bird sighting can be provided.
+
 
 ## 2.2 ASSUMPTIONS AND DEPENDENCIES
 
+Factors that impact our ability to fulfill the requirements outlined in this paper are definitely hardware limitations in terms of GPU for training of the classification model as well as manpower limitation since the pictures used to train the model can be scraped from the internet, but need to be sorted out manually in order to remove non-bird pictures that are found by the scraper.
+
+Another limitation is the cloud data space. Since the model is a student project and should be hosted for free and supplied for free, the cloud space is limited, which makes it difficult to deploy a bigger model with more bird classifications.
+
+For this project a model trained for the machine learning lab has been reused and needs to be trained more intensively to gain a better accurracy.
 
 
 # 3. SYSTEM FEATURES AND REQUIREMENTS
@@ -122,44 +131,115 @@ Overview
 
 ## 3.1 FUNCTIONAL REQUIREMENTS
 
+The user must be able to upload a bird picture in jpg or png format, have certain preprocessing steps and press a button in order to receive the correct classification for the picture. The classification of the picture is limited to three birds: great tit, robin and sparrow for the first release.
+
+The preprocessing steps the user can apply to the image are as follows: 
+
+- rotate image left
+- rotate image right
+- flip image
+- sharpen image
+- contrast image
+
+
+![upload](C:\Users\vivia\Git\Bird_Requirements\requirements\picture uploader.PNG)
+
+![user preprocess](C:\Users\vivia\Git\Bird_Requirements\requirements\picture preprocessor user.PNG)
+
+![show prediction](C:\Users\vivia\Git\Bird_Requirements\requirements\show prediction.PNG)
+
+Future functional requirements might include more categories of birds as well as time and location of bird sightings in order to gain a deeper understanding of the bird population in certain regions.
+
 ## 3.2 TECHNICAL REQUIREMENTS
+
+
+
+Image preprocessor
+Model loader
 
 ## 3.3 QUALITY OF SERVICE REQUIREMENTS
 
+Accuracy
+Performance
+
 ## 3.4 USER INTERFACE REQUIREMENTS
 
-## 3.5 EXTERNAL INTERFACE REQUIREMENTS
+webpage
 
-## 3.6 EXTERNAL DELIVERABLE/INTERFACE REQUIREMENTS
-
-## 3.7 ACTIVITY REQUIREMENTS
-
-## 3.8 SECURITY REQUIREMENTS
-
-## 3.9 LEGAL & CONTRACT REQUIREMENTS
+![wireframes](C:\Users\vivia\Git\Bird_Requirements\diagrams\wireframes.PNG)
 
 
 
-# 4. Data Science Methodology
+## 3.5 EXTERNAL DELIVERABLE/INTERFACE REQUIREMENTS
 
 
-# 5. Graphs
+
+## 3.6 ACTIVITY REQUIREMENTS
+
+## 3.7 SECURITY REQUIREMENTS
+
+Since no sensitive data is stored, security requirements do not have the highest importance. However, it needs to be ensured that no misuse is done and personal and compromising images are not stored by the model.
+
+## 3.8 LEGAL & CONTRACT REQUIREMENTS
+
+The user should be informed that the picture that is uploaded is saved and may be taken for future improvement of the model.
+It also needs to be stated that misclassification is possible and the authors cannot be legally prosecuted in any form due to a misclassification and its consequences.
 
 
-# 6. Data Science Architecture & Web Technologies
 
-## Why is a data science architecture essential for us?
+# 4. DATA SCIENCE METHODOLOGY CONCEPT – CRISP-DM
+
+## 4.1 WHY CRISP-DM
+Besides the respective FH-courses which already gave us an introduction to the process, we also decided to use CRISP-DM relying on an online source (Datascience-PM; https://www.datascience-pm.com/crisp-dm-2/) which summed up pros and cons in a simple fashion. Despite CRISP-DM having been developed specifically for Data Mining Projects it can and has been applied to all sorts projects. Bill Vorhies claims that since data science projects “start with business understanding” and “data that must be gathered, explored, and prepped in some way”, so CRISP-DM is applicable to “even the most advanced of today’s data science activities” (https://www.datasciencecentral.com/profiles/blogs/crisp-dm-a-standard-methodology-to-ensure-a-good-outcome).
+Despite some criticism of being too rigid, it is also possible to employ a more “loose CRISP-DM implementation” (Datascience-PM) which offers flexibility. Looking at the other reasons not to use CRISP-DM – it being documentation heavy, not modern i.e. predating big-data, and not suited for the coordination of bigger projects – we argue that a strong emphasis on documentation would have a positive effect on our learning as part of our first software project. The second and third inhibiting factors don’t apply because we’re not working with big data per se and we are working as a “small, tight-knit team” (Datascience-PM) which CRIPS-DM assumes. 
+
+## 4.2 CRISP-DM IN OUR PROJECT
+
+### Business Understanding
+The first step in our project would be to sit down with the (fictitious) client in form of a workshop, to try to understand how their business works and what they aim to accomplish. What do they expect the project to do for them in the long run, what are possible insights they want to gain, etc. But as mentioned above, we are not in a situation where the client just provides a lot of data and needs us to make sense of it. In fact, the expected outcome is quite clear: the classification of different kinds of birds based on images. It would therefore be more important to us to understand the most likely use cases, e.g. will private persons use the final project to classify birds in their garden (likely cell phone pictures) or are we dealing with a scientific purpose, where better image quality is likely.
+
+### Data Understanding
+It is necessary to establish an idea of the characteristics of what the pictures uploaded in the final product (by the user) will look like. What image quality can be expected? Which formats? Since we are working with images of birds, it might be that the user uploads cell-phone pictures with only a very small portion of the image displaying the object of interest. Instead of collecting data it should be provided by the client in this case, including expert labels. But in our practical realization of the classifier we work with quite unproblematic and high-quality image from a search engine. It may become necessary to go back to the previous step of the CRISP-DM during this stage.
+
+### Data Preparation
+Data preparation in our project focusses especially on preparing the images for classification through our ML model. (Preprocessing like reformatting, cropping, resizing, etc.). One very relevant task will be the cleaning of the data. It is possible that not all data provided by the client (or parsed through an image downloader in the real-world scenario) will be labelled by experts or otherwise incorrectly labelled. The client will once again be included in this process to ensure quality and consolidate expectations.
+
+### Modeling
+The modeling technique of choice for our classification problem should quite clearly be a convolutional neural network and since the training from scratch would take up too many resources a pre-trained base-model is used. A test design should to be agreed upon with the client and then the training and tweaking begins. Assessment of the model has to be put into relation to the client’s expectations – we’re looking for a good enough model given the resources, not the best possible model.
+
+### Evaluation
+The evaluation will not include only evaluation metrics of our model and prediction result, but needs to include a test ‘in the field’. Does the project deliver the expected result when employed by users? Are the users (and the client) satisfied when it comes both to result AND usability of the (preliminary) user interface?
+
+### Deployment
+Deployment in this project will include an approach regarding monitoring and maintenance. and a final report delivered to the customer. It might become necessary to conduct additional model-tuning later on and deploy the updated model or model weights. This might have to do with additional birds that are added to the classification scope or user feedback etc.
+
+### Dataflow
+Schematic of data flow in this project:  
+Client’s sample images -> expert labelling -> additional data collection/delivery by client -> (more expert labelling) -> data cleaning -> checking with experts, agreeing on dataset for modelling -> preprocessing for use in model -> training of model -> evaluation model -> exporting model/weights to use in final product
+Dataflow of image uploaded by user:
+Upload of image -> applying of chosen preprocessing step by user -> saving of image specifics in DB on prediction (including logging)
+
+# 5. GRAPHS
+
+![dataflow development](C:\Users\vivia\Git\Bird_Requirements\diagrams\dataflow_dev.PNG)
+
+![dataflow user](C:\Users\vivia\Git\Bird_Requirements\diagrams\dataflow_user.PNG)
+
+# 6. DATA SCIENCE ARCHITECTURE & WEB TECHNOLOGIES
+
+## 6.1 WHY IS A DATA SCIENCE ARCHITECTURE ESSENTIAL FOR US?
 Data scientists incline to use ad hoc tactics to achieve the goals. We have a lot of creative hacking methods in different programming languages on different machine learning frameworks. 
 We also have complete freedom of choice with programming languages, tools, and frameworks to improve creative thinking and development. However, data scientists must entirely shape their assets before delivery because there can be many pitfalls if they are not. (https://developer.ibm.com/technologies/artificial-intelligence/articles/architectural-thinking-in-the-wild-west-of-data-science/)
 
-## Which data science architecture is the best choice for us?
+## 6.2 WHICH DATA SCIENCE ARCHITECTURE IS THE BEST CHOICE FOR US?
 Before we can answer this question, we have to explain our project shortly in one sentence.
 The project aims to build a web page where users can upload their bird pictures to classify them.
 For this project goal, we have to meet the following two conditions:
 We need a website where a user can upload his photo.
 We need a model to classify this picture.
 
-## To achieve these conditions, we decided to use the following tools:
+## 6.3 TO ACHIEVE THESE CONDITIONS, WE DECIDED TO USE THE FOLLOWING TOOLS:
+
 ### Tensorflow:
 TensorFlow is an open-source library created by the Google Brain team for numerical computation and large-scale machine learning. TensorFlow bundles together a slew of machine learning and deep learning (aka neural networking) models and algorithms and makes them valuable. (https://www.infoworld.com/article/3278008/what-is-tensorflow-the-machine-learning-library-explained.html)
 
@@ -183,7 +263,12 @@ A Heroku application collects source code, perhaps a framework, and some depende
 
 When Heroku receives the application source, it initiates a build of the source application. The build mechanism is typically language-specific, but follows the same pattern, typically retrieving the specified dependencies, and creating any necessary assets (whether as simple as processing style sheets or as complex as compiling code). (https://devcenter.heroku.com/articles/how-heroku-works)
 
-![alt text here](path-to-image-here)
+This platform is chosen since it is free of use up to a certain amount of space and capacity and also very self-explanatory.
+
+
+## 6.4 ARCHTIECTURE OVERVIEW
+
+![archtiecture overview](C:\Users\vivia\Git\Bird_Requirements\diagrams\architecture overview.PNG)
 
 
 # 7. APPROVAL
