@@ -152,10 +152,29 @@ Future functional requirements might include more categories of birds as well as
 
 ## 3.2 TECHNICAL REQUIREMENTS
 
+### Common technical requirements
+
+In order to maintain a common programming platform, a docker development container shall be used with Visual Studio Code. The requirements shall be documented in an requirements.txt file and contain:
+
+--extra-index-url https://google-coral.github.io/py-repo/
+tflite-runtime
+.
+matplotlib==3.4.2
+numpy==1.19.5
+Pillow==8.2.0
+scikit-learn==0.24.2
+streamlit==0.82.0
+
+As a collaboration and CI/CD platform GitLab is used hosted by the FH Kufstein.
+The web app is programmed with streamlit for the first release. However a change to flask that is more flexible might be intended in a later state.
+The deployment for now will be on heroku, a platform hosted by Salesforce, that provides some limited free space for small applications. As the model grows, this deployment strategy might also be subject to change, depending on the required capacity of the app and the offers of maybe new emerging companies offering free cloud space.
+
+### Specific technical requirements
 
 
 Image preprocessor
 Model loader
+Streamlit App
 
 ## 3.3 QUALITY OF SERVICE REQUIREMENTS
 
@@ -221,7 +240,7 @@ Upload of image -> applying of chosen preprocessing step by user -> saving of im
 
 # 5. GRAPHS
 
-![dataflow development](C:\Users\vivia\Git\Bird_Requirements\diagrams\dataflow_dev.PNG)
+![dataflow development](https://github.com/EliReckless/Bird_Requirements/raw/main/diagrams/dataflow_dev.PNG)
 
 ![dataflow user](C:\Users\vivia\Git\Bird_Requirements\diagrams\dataflow_user.PNG)
 
