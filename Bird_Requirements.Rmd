@@ -195,13 +195,14 @@ The performance goal should be set to a maximum of 7 seconds for the prediction 
 
 ## 3.4 User Interface Requirements
 
-webpage Streamlit App
+The user must be able to access the webpage via Internet and upload his or her picture to it. A further processing step to rotate or sharpen the picture is nice to have and shall be integrated. A button should be supplied to the user to start running the prediction after he has finished his or her preparation of the picture. The prediction should be shown to the user after he or she has pressed the butoon.
 
 ![wireframes](C:\Users\vivia\Git\Bird_Requirements\diagrams\wireframes.PNG)
 
 
 
 ## 3.5 External Deliverables
+
 
 
 
