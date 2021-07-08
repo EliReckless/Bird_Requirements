@@ -203,12 +203,13 @@ The user must be able to access the webpage via Internet and upload his or her p
 
 ## 3.5 External Deliverables
 
-
+Similar projects like the Eagle Vision project (https://github.com/Joshmantova/Eagle-Vision)  have been set up to classifiy birds. However our classification model strives to help users worldwide and ornithologists in particular to identify more species of birds with a higher accuracy. To achieve this the product might have to move from a free cloud platform to a paid platform that offers more performance. The fee could be refinanced via donations and/or public founding programs.
 
 
 ## 3.6 Activity Requirements
 
-Documentation in Sphinx
+In order to to keep track of the ongoing programming and to be able to eliminate errors and problems at short notice the programming activity must be documented. This will also help to enable new employees to join, be able to implement changed requirements in the system appropriately and react to changes in the technical environment. It will aso help the stakeholders to understand the architecture decisions and give developers specifications regarding the architecture. 
+The documentation shall be made using Sphinx.
 
 ## 3.7 Security Requirements
 
