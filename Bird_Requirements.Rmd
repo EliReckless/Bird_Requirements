@@ -189,8 +189,9 @@ For the Webpage the streamlit app.py needs to be created and a Procfile has to b
 
 ## 3.3 Quality of Service Requirements
 
-Accuracy
-Performance
+In order not to disappoint users, the accuracy of the model needs to be at least 80%. To achieve this the model needs to be trained with more pictures and the layers on top of the VGG16 model might need adaptation. For the local model training the jupiter notebook containing the model could use Goolge Colab GPU resources. However for future releases the manual training process should be transformed to a regular monitored automated training including more bird species.
+
+The performance goal should be set to a maximum of 7 seconds for the prediction part so the user does not get impatient in waiting. To support this code refactoring and a review of several free cloud offers need to be performed.
 
 ## 3.4 User Interface Requirements
 
