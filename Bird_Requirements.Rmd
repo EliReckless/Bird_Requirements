@@ -206,7 +206,27 @@ For the Webpage the streamlit app.py needs to be created and a Procfile has to b
 <!-- ![streamlit app](C:\Users\vivia\Git\Bird_Requirements\requirements\streamlit app.PNG) -->
 </center>
 
-## 3.3 Quality of Service Requirements
+## 3.3 Non-Functional requirements
+
+Non-functional requirements are important to define a framework for the software architecture. This is beacause differnet software architecture styles might have differnt impacts on the non-functional requirement and vice-versa. For example, according to dev.to, a Batch Sequential architecture can have a negative impact in usability while a MVC architecture has a great perform in this area. The latter example once again highlights the ever given trade-offs within the field of Software Development and Data Science.
+
+The main non-functial requirements comprise the following:
+
+* `usability`
+* `life time`
+* `cost`
+* `scalability`
+* `reliability`
+* `concurrency`
+* `performance`
+* `security`
+* `availability`
+* `simplicity`
+* `reusabilty`
+* `portability`
+
+
+
 
 In order not to disappoint users, the accuracy of the model needs to be at least 80%. To achieve this the model needs to be trained with more pictures and the layers on top of the VGG16 model might need adaptation. For the local model training the jupiter notebook containing the model could use Goolge Colab GPU resources. However for future releases the manual training process should be transformed to a regular monitored automated training including more bird species.
 
