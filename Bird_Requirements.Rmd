@@ -230,9 +230,9 @@ The primary goal of the *bird-classifier* is collecting as many happy customers 
 
 To make our customers happy, we therefore decided to go with the follwing non-functional requirements:
 
-* `performance`: the accuracy of our model's prediction is supposed to be at least 80% in the first step. To achieve this the model needs to be trained with more pictures and the layers on top of the VGG16 model might need adaptation. For the local model training the jupiter notebook containing the model could use Goolge Colab GPU resources. However, for future releases the manual training process should be switched to a regularly monitored, automated training including more bird pictures and species. Further, the 80% Accuracy shall be combined with a prediction time of 7 seconds max. 
+* `performance`: the accuracy of our model's prediction is supposed to be at least 80% in the first step. To achieve this the model needs to be trained with more pictures and the layers on top of the VGG16 model might need adaptation. For the local model training the jupiter notebook containing the model could use Goolge Colab GPU resources. However, for future releases the manual training process should be switched to a regularly monitored, automated training including more bird pictures and species. Further, the 80% Accuracy shall be combined with a prediction time of 7 seconds max.
 
-
+* `scalability`: the scalabilty of the *bird-classifier* is key to handle the requests of the constantly growing and bird loving bird-classifier community. The current server might run out of ressources, e.g. CPU or RAM. More ressources could be bought and the architecture remains the same. However, with ever growing user numbers, this is not a permanent solution. A second possibiliy is to take advantage of a so called-load balancer to evenly distribute the requests a cross multiple servers. There are multiple ways to deal with this non-functional requirement all of which have there advantages and disadvantages.
 
 
 ## 3.4 User Interface Requirements
