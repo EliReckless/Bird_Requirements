@@ -208,9 +208,9 @@ For the Webpage the streamlit app.py needs to be created and a Procfile has to b
 
 ## 3.3 Non-Functional requirements
 
-Non-functional requirements are important to define a framework for the software architecture. This is beacause differnet software architecture styles might have differnt impacts on the non-functional requirement and vice-versa. For example, according to dev.to, a Batch Sequential architecture can have a negative impact in usability while a MVC architecture has a great perform in this area. The latter example once again highlights the ever given trade-offs within the field of Software Development and Data Science.
+Non-functional requirements are important to define a framework for the software architecture. This is because different software architecture styles might have different impacts on the non-functional requirement and vice-versa. For example, according to dev.to, a Batch Sequential architecture can have a negative impact in usability while a MVC architecture has a great perform in this area. The latter example once again highlights the ever given trade-offs within the field of Software Development and Data Science.
 
-The main non-functial requirements comprise the following:
+The main non-functional requirements comprise the following:
 
 * `usability`
 * `life time`
@@ -224,13 +224,16 @@ The main non-functial requirements comprise the following:
 * `simplicity`
 * `reusabilty`
 * `portability`
+* `testability`
+
+The primary goal of the *bird-classifier* is collecting as many happy customers as possible. And the key to customer happiness is a smooth customer experience. When it comes to a classification algorithm such as the *bird-classifier*, the key aspects of this smooth experience is cleary the algorithm's accuracy as well as the duration of the prediction. According to latest scientific research, customers want faster responses from their application interactions than ever.
+
+To make our customers happy, we therefore decided to go with the follwing non-functional requirements:
+
+* `performance`: the accuracy of our model's prediction is supposed to be at least 80% in the first step. To achieve this the model needs to be trained with more pictures and the layers on top of the VGG16 model might need adaptation. For the local model training the jupiter notebook containing the model could use Goolge Colab GPU resources. However, for future releases the manual training process should be switched to a regularly monitored, automated training including more bird pictures and species. Further, the 80% Accuracy shall be combined with a prediction time of 7 seconds max. 
 
 
 
-
-In order not to disappoint users, the accuracy of the model needs to be at least 80%. To achieve this the model needs to be trained with more pictures and the layers on top of the VGG16 model might need adaptation. For the local model training the jupiter notebook containing the model could use Goolge Colab GPU resources. However for future releases the manual training process should be transformed to a regular monitored automated training including more bird species.
-
-The performance goal should be set to a maximum of 7 seconds for the prediction part so the user does not get impatient in waiting. To support this code refactoring and a review of several free cloud offers need to be performed.
 
 ## 3.4 User Interface Requirements
 
