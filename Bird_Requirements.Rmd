@@ -1,6 +1,6 @@
 ---
 title: "Bird Classifier Requirement Analysis"
-author: "Peter Aichinger-Frankhauser, Jens Barkshat, Robert Bartz, Michael Holzinger, Elias Reckmeyer & Viviane Aicher"
+author: "Viviane Aicher, Peter Aichinger-Fankhauser, Jens Barkschat, Robert Bartz, Michael Holzinger, Elias Reckmeyer"
 output:
   html_document:
     toc: true
@@ -81,39 +81,44 @@ Beispiel
 
 # 1. INTRODUCTION
 
-Ever seen a bird in your garden and wondered what kind of bird it is? 
-Now you can simply let AI classify your bird. Just take a picture of it and upload it to our webpage. The algorithm will tell you what kind of bird it is. (Currently only 3 kinds of birds will be detected).
+"Ever seen a bird in your garden and wondered what kind it is? Just take a picture of it and upload it to our webpage. It'll tell you what you're looking at."
+
+This project aims at functioning like a browser-based version of the well-known plantnet-app but for the classification of birds. A first release of this application has been realized in a hands-on approach as part of our LAB. Currently only 3 kinds of birds will be detected. This ILV-portfolio, however, is not completely connected to the LAB and aims at theoretically setting up this project on a larger scale. It also assumes that we have a client with whom we formulate requirements while delving into data science methodology, architecture, design patterns and other contents we discussed in class. 
+
+Nevertheless, in the following descriptions and where appropriate, the LAB-part will sometimes be discussed as well.
 
 ## 1.1 Purpose
 
-The aim of the project is to build a webpage where users can upload their bird pictures in order to classify them.
-At first only three categories of birds will be detected: Great tit, robin and sparrow.
+The aim of the project is to build a webpage where users can upload their bird pictures in order to classify them. 
+(At first only three categories of birds will be detected: Great tit, robin and sparrow.)
+Our ficticious client is interesting in creating a service similar to plant-web, the commercial benefit is supposed to be derived from advertisement. It can be assumend that the client brings sufficient domain knowledge to the table (e.g. for the creation of expert labels if necessary)
+
 
 ## 1.2 Intended Audience
 
-The intended users are bird interested people and ornithologists.
+The intended users are people interested in birds and ornithologists as well as casual users. Since the client wanted to keep an open mind towards use cases in science, these are also shortly mentioned in our below explanation. However, these use cases might need additional functionality not in the scope of this portfolio. 
 
 ## 1.3 Intended Use
 
-Detect bird species from bird picture.
+Classify birds based on pictures uploaded to our website. Mostly casual use in order to make the app commercially viable, but also ornithologists as well as possibly some uses in science. This might make additional requirements necessary (e.g. detection not based on an uploaded image but on images automatically taken from a camera live stream. 
 
 ## 1.4 Scope
 
-The scope of the first release should be a working webpage where great tit, robin and sparrow pictures in jpg and png format can be uploaded, rotated and sharpended by the user in order to classify the bird species shown in the picture.
+The scope of the first release should be a working webpage where great tit, robin and sparrow pictures in jpg and png format can be uploaded, rotated and sharpended by the user in order to classify the bird species shown in the picture. This is the LAB-Part of the present project which can be understood as the MVP that serves as a basis for further exchange with the client. Starting from this MVP it will be easier to explicitly work out the client's wishes and expectations which will of course include a plethora of different bird species including localization and so forth.
 
-## 1.5 Definitions and Acronyms
+## 1.5 Risks and further steps
 
 There are potential risks in the development and deployment of the product, for example the classification could be wrong, the upload of the user picture could fail due to wrong picture formats or the webpage could be offline.
 In order to minimize these risks, testing will be implemented and the webserver will be hosted with an external company that has the competence to maintain the webapp 24/7.
 
-In later releases when more birds can be classified and the tool is maybe used in an international context, new birds species that are rare might be needed to classify. However a certain amount of pictures is needed to train the model. If these pictures are not available on the internet or the training of the model already takes very long, those birds will not be able to be classified by the tool.
+In later releases, when more birds can be classified and the tool might be used in an international context, new and also rare birds species will have to be classified in order to provide for an exhaustive classification. However a certain amount of pictures is needed to train the model. If these pictures are not available on the internet or the training of the model already takes very long, those birds will not be able to be classified by the tool. Thus, as described in the section on CRISP-DM, the client themselves might be able to provide pictures based on their expertise. 
 
 
 # 2. OVERALL DESCRIPTION
 
 ## 2.1 User Needs
 
-The target group for our web app are ornithologists as well as bird interested people that would like to know which birds they have seen and been able to take pictures of. In later release states also environmentalists and city officials might be interested in the app when the location and time of the bird sighting can be provided.
+The target group for our web app are ornithologists as well as people interested in birds that would like to know which birds they have seen and been able to take pictures of. In later release states also scientists, environmentalists and city officials might be interested in the app when the location and time of the bird sighting can be provided.
 
 
 ## 2.2 Assumptions and Dependencies
@@ -141,12 +146,13 @@ The preprocessing steps the user can apply to the image are as follows:
 - sharpen image
 - contrast image
 
+<center>
+<!-- ![upload](C:\Users\vivia\Git\Bird_Requirements\requirements\picture uploader.PNG) -->
 
-![upload](C:\Users\vivia\Git\Bird_Requirements\requirements\picture uploader.PNG)
+<!-- ![user preprocess](C:\Users\vivia\Git\Bird_Requirements\requirements\picture preprocessor user.PNG) -->
 
-![user preprocess](C:\Users\vivia\Git\Bird_Requirements\requirements\picture preprocessor user.PNG)
-
-![show prediction](C:\Users\vivia\Git\Bird_Requirements\requirements\show prediction.PNG)
+<!-- ![show prediction](C:\Users\vivia\Git\Bird_Requirements\requirements\show prediction.PNG) -->
+</center>
 
 Future functional requirements might include more categories of birds as well as time and location of bird sightings in order to gain a deeper understanding of the bird population in certain regions.
 
@@ -156,14 +162,14 @@ Future functional requirements might include more categories of birds as well as
 
 In order to maintain a common programming platform, a docker development container shall be used with Visual Studio Code. The requirements shall be documented in an requirements.txt file and contain:
 
---extra-index-url https://google-coral.github.io/py-repo/
-tflite-runtime
-.
-matplotlib==3.4.2
-numpy==1.19.5
-Pillow==8.2.0
-scikit-learn==0.24.2
-streamlit==0.82.0
+- --extra-index-url https://google-coral.github.io/py-repo/
+- tflite-runtime
+- .
+- matplotlib==3.4.2
+- numpy==1.19.5
+- Pillow==8.2.0
+- scikit-learn==0.24.2
+- streamlit==0.82.0
 
 As a collaboration and CI/CD platform GitLab is used hosted by the FH Kufstein.
 The web app is programmed with streamlit for the first release. However a change to flask that is more flexible might be intended in a later state.
@@ -173,19 +179,32 @@ Logging has to be used for recording and traceability of error states in the sof
 
 Currently the uploaded image by the user is always replaced by the new uploaded picture. In future the pictures should be saved as well as the logging and the predicted accurracies. Thus a database connection will be needed at a later release state.
 
+#### Logging
+
+Additional common requirements include logging for the prediction process itself as well as for given errors. 
+
+<center>
+
+![prediction logger](.\requirements\log_predictions.PNG)
+
+![error logger](.\requirements\log_errors.PNG)
+
+</center>
+
+
 ### Specific technical requirements
 
 For the classification of the bird image we need to resize and reshape the uploaded and preprocessed image from the user to a numpy array format in float32.
 This array will be handed over to the model that has been trained and saved in advance in a jupyter notebook and is loaded to predict the user image.
 
 For the Webpage the streamlit app.py needs to be created and a Procfile has to be set up for the deployment to heroku.
+<center>
+<!-- ![image converter](C:\Users\vivia\Git\Bird_Requirements\requirements\picture preprocessor.PNG) -->
 
-![image converter](C:\Users\vivia\Git\Bird_Requirements\requirements\picture preprocessor.PNG)
+<!-- ![model loader](C:\Users\vivia\Git\Bird_Requirements\requirements\model loader.PNG) -->
 
-![model loader](C:\Users\vivia\Git\Bird_Requirements\requirements\model loader.PNG)
-
-![streamlit app](C:\Users\vivia\Git\Bird_Requirements\requirements\streamlit app.PNG)
-
+<!-- ![streamlit app](C:\Users\vivia\Git\Bird_Requirements\requirements\streamlit app.PNG) -->
+</center>
 
 ## 3.3 Quality of Service Requirements
 
@@ -197,8 +216,9 @@ The performance goal should be set to a maximum of 7 seconds for the prediction 
 
 The user must be able to access the webpage via Internet and upload his or her picture to it. A further processing step to rotate or sharpen the picture is nice to have and shall be integrated. A button should be supplied to the user to start running the prediction after he has finished his or her preparation of the picture. The prediction should be shown to the user after he or she has pressed the butoon.
 
-![wireframes](C:\Users\vivia\Git\Bird_Requirements\diagrams\wireframes.PNG)
-
+<center>
+![wireframes](.\diagrams\wireframes.PNG)
+</center>
 
 
 ## 3.5 External Deliverables
@@ -226,9 +246,14 @@ It also needs to be stated that misclassification is possible and the authors ca
 
 ## 4.1 Why CRISP-DM
 Besides the respective FH-courses which already gave us an introduction to the process, we also decided to use CRISP-DM relying on an online source (Datascience-PM; https://www.datascience-pm.com/crisp-dm-2/) which summed up pros and cons in a simple fashion. Despite CRISP-DM having been developed specifically for Data Mining Projects it can and has been applied to all sorts projects. Bill Vorhies claims that since data science projects “start with business understanding” and “data that must be gathered, explored, and prepped in some way”, so CRISP-DM is applicable to “even the most advanced of today’s data science activities” (https://www.datasciencecentral.com/profiles/blogs/crisp-dm-a-standard-methodology-to-ensure-a-good-outcome).
+
 Despite some criticism of being too rigid, it is also possible to employ a more “loose CRISP-DM implementation” (Datascience-PM) which offers flexibility. Looking at the other reasons not to use CRISP-DM – it being documentation heavy, not modern i.e. predating big-data, and not suited for the coordination of bigger projects – we argue that a strong emphasis on documentation would have a positive effect on our learning as part of our first software project. The second and third inhibiting factors don’t apply because we’re not working with big data per se and we are working as a “small, tight-knit team” (Datascience-PM) which CRIPS-DM assumes. 
 
 ## 4.2 CRISP-DM in our project
+
+<center>
+![crisp dm in our project](.\diagrams\crisp-dm.PNG)
+</center>
 
 ### Business Understanding
 The first step in our project would be to sit down with the (fictitious) client in form of a workshop, to try to understand how their business works and what they aim to accomplish. What do they expect the project to do for them in the long run, what are possible insights they want to gain, etc. But as mentioned above, we are not in a situation where the client just provides a lot of data and needs us to make sense of it. In fact, the expected outcome is quite clear: the classification of different kinds of birds based on images. It would therefore be more important to us to understand the most likely use cases, e.g. will private persons use the final project to classify birds in their garden (likely cell phone pictures) or are we dealing with a scientific purpose, where better image quality is likely.
@@ -251,29 +276,35 @@ Deployment in this project will include an approach regarding monitoring and mai
 ### Dataflow
 Schematic of data flow in this project:  
 Client’s sample images -> expert labelling -> additional data collection/delivery by client -> (more expert labelling) -> data cleaning -> checking with experts, agreeing on dataset for modelling -> preprocessing for use in model -> training of model -> evaluation model -> exporting model/weights to use in final product
+
 Dataflow of image uploaded by user:
 Upload of image -> applying of chosen preprocessing step by user -> saving of image specifics in DB on prediction (including logging)
 
-# 5. GRAPHS
+#### Dataflow Graphs 
 
-![dataflow development](https://github.com/EliReckless/Bird_Requirements/raw/main/diagrams/dataflow_dev.PNG)
+<center>
 
-![dataflow user](C:\Users\vivia\Git\Bird_Requirements\diagrams\dataflow_user.PNG)
+![dataflow development](.\diagrams\dataflow_dev.PNG)
 
-# 6. DATA SCIENCE ARCHITECTURE & WEB TECHNOLOGIES
+![dataflow user](.\diagrams\dataflow_user.PNG)
+
+</center>
+
+
+# 5. DATA SCIENCE ARCHITECTURE & WEB TECHNOLOGIES
 
 ## 6.1 Why is a data science architecture essential for us?
 Data scientists incline to use ad hoc tactics to achieve the goals. We have a lot of creative hacking methods in different programming languages on different machine learning frameworks. 
 We also have complete freedom of choice with programming languages, tools, and frameworks to improve creative thinking and development. However, data scientists must entirely shape their assets before delivery because there can be many pitfalls if they are not. (https://developer.ibm.com/technologies/artificial-intelligence/articles/architectural-thinking-in-the-wild-west-of-data-science/)
 
-## 6.2 Which data science architecture is the best choice for us?
+## 5.2 Which data science architecture is the best choice for us?
 Before we can answer this question, we have to explain our project shortly in one sentence.
 The project aims to build a web page where users can upload their bird pictures to classify them.
 For this project goal, we have to meet the following two conditions:
 We need a website where a user can upload his photo.
 We need a model to classify this picture.
 
-## 6.3 To achieve these conditions, we decided to use the following tools:
+## 5.3 To achieve these conditions, we decided to use the following tools:
 
 ### Tensorflow:
 TensorFlow is an open-source library created by the Google Brain team for numerical computation and large-scale machine learning. TensorFlow bundles together a slew of machine learning and deep learning (aka neural networking) models and algorithms and makes them valuable. (https://www.infoworld.com/article/3278008/what-is-tensorflow-the-machine-learning-library-explained.html)
@@ -301,14 +332,11 @@ When Heroku receives the application source, it initiates a build of the source 
 This platform is chosen since it is free of use up to a certain amount of space and capacity and also very self-explanatory.
 
 
-## 6.4 Architecture Overview
+## 5.4 Architecture Overview
 
-![archtiecture overview](C:\Users\vivia\Git\Bird_Requirements\diagrams\architecture overview.PNG)
-
-
-# 7. APPROVAL
-
-Approval by key stakeholders is needed after the definition of the requirements.
+<center>
+![archtiecture overview](.\diagrams\architecture overview.PNG)
+</center>
 
 
 
