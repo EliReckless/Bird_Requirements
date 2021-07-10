@@ -313,21 +313,27 @@ Upload of image -> applying of chosen preprocessing step by user -> saving of im
 
 </center>
 
+# 5. Testing - Why we use Unit Testing and how we would possibly implement it
 
-# 5. DATA SCIENCE ARCHITECTURE & WEB TECHNOLOGIES
+In order to improve the quality of our software we introduce unit testing and write tests to automatically check if vital parts of our project are working as intended. Besides testing the initial code base before we deploy the project, we will use testing to assure that it continues to work after deployment. This is essential as we plan to expand the platform and hope to classify a wide range of birds in the future. If something stops working properly, we want to find out about it as soon as possible. In combination with continuous integration (CI) we provide the necessary tools to do that.
+
+As we improve bird classifiers accuracy, we will need to retrain the model using additional training data. Testing could be used to validate that the model gets the expected data as expected for training. Since our resources are limited (especially GPUs for training our CNN) validating training data with testing could save us a lot of valuable run time down the line.
+
+
+# 6. DATA SCIENCE ARCHITECTURE & WEB TECHNOLOGIES
 
 ## 6.1 Why is a data science architecture essential for us?
 Data scientists incline to use ad hoc tactics to achieve the goals. We have a lot of creative hacking methods in different programming languages on different machine learning frameworks. 
 We also have complete freedom of choice with programming languages, tools, and frameworks to improve creative thinking and development. However, data scientists must entirely shape their assets before delivery because there can be many pitfalls if they are not. (https://developer.ibm.com/technologies/artificial-intelligence/articles/architectural-thinking-in-the-wild-west-of-data-science/)
 
-## 5.2 Which data science architecture is the best choice for us?
+## 6.2 Which data science architecture is the best choice for us?
 Before we can answer this question, we have to explain our project shortly in one sentence.
 The project aims to build a web page where users can upload their bird pictures to classify them.
 For this project goal, we have to meet the following two conditions:
 We need a website where a user can upload his photo.
 We need a model to classify this picture.
 
-## 5.3 To achieve these conditions, we decided to use the following tools:
+## 6.3 To achieve these conditions, we decided to use the following tools:
 
 ### Tensorflow:
 TensorFlow is an open-source library created by the Google Brain team for numerical computation and large-scale machine learning. TensorFlow bundles together a slew of machine learning and deep learning (aka neural networking) models and algorithms and makes them valuable. (https://www.infoworld.com/article/3278008/what-is-tensorflow-the-machine-learning-library-explained.html)
@@ -355,7 +361,7 @@ When Heroku receives the application source, it initiates a build of the source 
 This platform is chosen since it is free of use up to a certain amount of space and capacity and also very self-explanatory.
 
 
-## 5.4 Architecture Overview
+## 6.4 Architecture Overview
 
 <center>
 ![archtiecture overview](.\diagrams\architecture overview.PNG)
