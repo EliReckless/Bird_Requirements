@@ -27,7 +27,7 @@ output:
 
 This project aims at functioning like a browser-based version of the well-known plantnet-app but for the classification of birds. A first release of this application has been realized in a hands-on approach as part of our LAB. Currently only 3 kinds of birds will be detected. This ILV-portfolio, however, is not completely connected to the LAB and aims at theoretically setting up this project on a larger scale. It also assumes that we have a client with whom we formulate requirements while delving into data science methodology, architecture, design patterns and other contents we discussed in class. 
 
-Nevertheless, in the following descriptions and where appropriate, the LAB-part will sometimes be discussed as well.
+The requirements analysis documents can be found at the GitHub project "Bird_Requirements" (https://github.com/EliReckless/Bird_Requirements) and the first release draft from the LAB can be found at the GitLab project "My Bird Classifier" (https://gitlab.web.fh-kufstein.ac.at/2010837035/my-bird-classifier). The deployed release draft webpage can be found at: https://birdyclassifier.herokuapp.com/
 
 ## 1.1 Purpose
 
