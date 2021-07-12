@@ -1,6 +1,6 @@
 ---
 title: "Bird Classifier Requirement Analysis"
-subtitle: "DSIA.bbM.20.SS21 SOF 29781 - 1"
+subtitle: "DSIA.bbM.20.SS21 Softwareentwicklung für Data Science 2 ILV - 1"
 author: "Peter Aichinger-Fankhauser, Jens Barkschat, Robert Bartz, Michael Holzinger, Elias Reckmeyer, Viviane Aicher"
 date: "July 12, 2021"
 output:
@@ -9,8 +9,6 @@ output:
     toc_float: true
     df_print: paged
     theme: journal
-   
-
 ---
 
 <center>
