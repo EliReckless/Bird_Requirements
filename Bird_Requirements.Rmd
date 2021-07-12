@@ -335,6 +335,9 @@ In order to gain a better understanding of our proposed architecture, an overvie
 </center>
 
 
+# 7. APPROVAL
+
+Once all the requirements are defined, it is important to request approval by all stakeholders with the latest version of the document to be able to avoid misunderstanding and incomplete coverage of the user requirements. In case of costs for a non-free deployment, it must be clarified who is being charged for it and on which basis.
 
 
 
