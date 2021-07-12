@@ -1,13 +1,23 @@
 ---
 title: "Bird Classifier Requirement Analysis"
-author: "Viviane Aicher, Peter Aichinger-Fankhauser, Jens Barkschat, Robert Bartz, Michael Holzinger, Elias Reckmeyer"
+subtitle: "DSIA.bbM.20.SS21 SOF 29781 - 1"
+author: "Peter Aichinger-Fankhauser, Jens Barkschat, Robert Bartz, Michael Holzinger, Elias Reckmeyer, Viviane Aicher"
+date: "July 12, 2021"
 output:
   html_document:
     toc: true
     toc_float: true
     df_print: paged
+    theme: journal
+   
+
 ---
 
+<center>
+
+![Red Robin](.\diagrams\bird.PNG)
+
+</center>
 
 
 
@@ -80,11 +90,11 @@ The preprocessing steps the user can apply to the image are as follows:
 
 <center>
 
-![upload](.\requirements\picture uploader.PNG)
+![Upload](.\requirements\picture uploader.PNG)
 
-![user preprocess](.\requirements\picture preprocessor user.PNG)
+![User Preprocess](.\requirements\picture preprocessor user.PNG)
 
-![show prediction](.\requirements\show prediction.PNG)
+![Show Prediction](.\requirements\show prediction.PNG)
 
 </center>
 
@@ -119,9 +129,9 @@ Additional common requirements include logging for the prediction process itself
 
 <center>
 
-![prediction logger](.\requirements\log_predictions.PNG)
+![Prediction Logger](.\requirements\log_predictions.PNG)
 
-![error logger](.\requirements\log_errors.PNG)
+![Error Logger](.\requirements\log_errors.PNG)
 
 </center>
 
@@ -134,11 +144,11 @@ This array will be handed over to the model that has been trained and saved in a
 For the Webpage the streamlit app.py needs to be created and a Procfile has to be set up for the deployment to heroku.
 <center>
 
-![image converter](.\requirements\picture preprocessor.PNG)
+![Image Converter](.\requirements\picture preprocessor.PNG)
 
-![model loader](.\requirements\model loader.PNG)
+![Model Loader](.\requirements\model loader.PNG)
 
-![streamlit app](.\requirements\streamlit app.PNG)
+![Streamlit App](.\requirements\streamlit app.PNG)
 
 </center>
 
@@ -172,11 +182,11 @@ To make our customers happy, we therefore decided to go with the following non-f
 
 <center>
 
-![accuracy](.\requirements\accuracy.PNG)
+![Accuracy](.\requirements\accuracy.PNG)
 
-![speed](.\requirements\speed.PNG)
+![Speed](.\requirements\speed.PNG)
 
-![scalability](.\requirements\scalability.PNG)
+![Scalability](.\requirements\scalability.PNG)
 
 </center>
 
@@ -187,9 +197,9 @@ The user must be able to access the webpage via internet and upload his or her p
 
 <center>
 
-![interface_design](.\requirements\interface_design.PNG)
+![Interface Design](.\requirements\interface_design.PNG)
 
-![wireframes](.\diagrams\wireframes.PNG)
+![Wireframes](.\diagrams\wireframes.PNG)
 
 </center>
 
@@ -226,7 +236,7 @@ Despite some criticism of being too rigid, it is also possible to employ a more 
 
 <center>
 
-![crisp dm in our project](.\diagrams\crisp-dm.PNG)
+![Crisp dm in our project](.\diagrams\crisp-dm.PNG)
 
 </center>
 
@@ -259,9 +269,9 @@ Upload of image -> applying of chosen preprocessing step by user -> saving of im
 
 <center>
 
-![dataflow development](.\diagrams\dataflow_dev.PNG)
+![](.\diagrams\dataflow_dev.PNG)
 
-![dataflow user](.\diagrams\dataflow_user.PNG)
+![](.\diagrams\dataflow_user.PNG)
 
 </center>
 
@@ -315,9 +325,12 @@ This platform is chosen since it is free of use up to a certain amount of space 
 
 ## 6.4 Architecture Overview
 
+In order to gain a better understanding of our proposed architecture, an overview with the process steps and the used toolkit is provided:
+
+
 <center>
 
-![archtiecture overview](.\diagrams\architecture overview.PNG)
+![Archtiecture Overview](.\diagrams\architecture overview.PNG)
 
 </center>
 
