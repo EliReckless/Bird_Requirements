@@ -9,74 +9,6 @@ output:
 ---
 
 
-# Anforderungen und Aufgaben Lukas Huber:
-
-1. 
-
-Finden Sie Veränderungen der Requirements für Ihr System, die
-wahrscheinlich eintreten könnten:
-- Veränderung des Daten-liefernden Systems
-- Mehrere Standorte/Formate/Systeme/Umstände mit denen Ihr System
-umgehen können „soll“/“muss“
-
-
-2.
-
-Welche Web-Technologien braucht Ihr Data Science System?
-- z.B. eine App, mit Server im Hintergrund,
-- z.B. eine Schnittstelle, für andere Webseiten,...
-- Welche Modelle, Datenbanken, Technologien möchte/sollte man einsetzen? Wo/Wie wird
-gespeichert?
-
-
-3. übernimmt Viv
-
-- Entwickeln Sie ein einfaches Architekturmodellfür Ihren Use Case!
-- Welche Architektur würden Sie  wählen, warum?
-- Welche Art von Schnittstellen wären notwendig? Welche denkbar? Welche möglich?
-- Wie können Sie „Messaging“ nutzen?
-- Welche Informationen können Sie aus „Log“-Dateien extrahieren?
-- Wie könnten Sie über „Internationalisierung stolpern“ – (nicht nur Kunden aus diversen Ländern)?
-
-
-4.
-
-- README.md
-- Requirements/
-- my_requirement diagram
-- My_requirement „writing“
-- Architecture/
-- Architecture content
-- Design
-- Design content
-- + Fiktive Umsetzung (z.b. .gitlab-ci.yml, test.py,…)
-- + Verwendung von Git-Versionierung, Branches, Tags.
-
-
-5.
-
-- Entwerfen Sie ihr (hypothetisches) Entwicklungsmodell (Vorgehen) – für Ihr
-Beispiel
-- Beschreiben Sie dazu, wie Sie vorgehen
-- Setzen Sie es ggf. „demonstrativ“ um.
-- Entwerfen Sie die Systemarchitektur (Client-Server, Monolith, Micro?)
-- Modellieren Sie relevante Sichten auf das System
-- Welche Tests sind sinnvoll – schreiben Sie einen (auch fiktiven) Test!
-- Welche Logs sind notwendig? – Beschreiben Sie Beispiele
-- Benötigt ihr Projekt Internationalisierung? Wo?
-- Welche APIs könnten Sie verwenden/anbieten?
-- Welche Design Patterns können Sie Verwenden?
-- Wie könnte eine CI/CD-Pipeline aussehen?
--Spielen sie die Pipeline für die Entw. Eines Features durch!
-
-
-6. Übernimmt Michael Holzinger
-
-- Welche Art von Data-Science-Architektur würde für Ihr Projekt passen?
-- Wie könnte diese aussehen?
-- Warum nicht ein anderer Ansatz?
-- Wie könnten Pipelines Verwendung finden?
-
 
 
 # 1. INTRODUCTION
@@ -147,11 +79,13 @@ The preprocessing steps the user can apply to the image are as follows:
 - contrast image
 
 <center>
-<!-- ![upload](C:\Users\vivia\Git\Bird_Requirements\requirements\picture uploader.PNG) -->
 
-<!-- ![user preprocess](C:\Users\vivia\Git\Bird_Requirements\requirements\picture preprocessor user.PNG) -->
+![upload](.\requirements\picture uploader.PNG)
 
-<!-- ![show prediction](C:\Users\vivia\Git\Bird_Requirements\requirements\show prediction.PNG) -->
+![user preprocess](.\requirements\picture preprocessor user.PNG)
+
+![show prediction](.\requirements\show prediction.PNG)
+
 </center>
 
 Future functional requirements might include more categories of birds as well as time and location of bird sightings in order to gain a deeper understanding of the bird population in certain regions.
@@ -199,11 +133,13 @@ This array will be handed over to the model that has been trained and saved in a
 
 For the Webpage the streamlit app.py needs to be created and a Procfile has to be set up for the deployment to heroku.
 <center>
-<!-- ![image converter](C:\Users\vivia\Git\Bird_Requirements\requirements\picture preprocessor.PNG) -->
 
-<!-- ![model loader](C:\Users\vivia\Git\Bird_Requirements\requirements\model loader.PNG) -->
+![image converter](.\requirements\picture preprocessor.PNG)
 
-<!-- ![streamlit app](C:\Users\vivia\Git\Bird_Requirements\requirements\streamlit app.PNG) -->
+![model loader](.\requirements\model loader.PNG)
+
+![streamlit app](.\requirements\streamlit app.PNG)
+
 </center>
 
 ## 3.3 Non-Functional requirements
@@ -240,7 +176,9 @@ To make our customers happy, we therefore decided to go with the following non-f
 The user must be able to access the webpage via internet and upload his or her picture to it. A further processing step to rotate or sharpen the picture is nice to have and shall be integrated. A button should be supplied to the user to start running the prediction after he has finished his or her preparation of the picture. The prediction should be shown to the user after he or she has pressed the button.
 
 <center>
+
 ![wireframes](.\diagrams\wireframes.PNG)
+
 </center>
 
 
@@ -275,7 +213,9 @@ Despite some criticism of being too rigid, it is also possible to employ a more 
 ## 4.2 CRISP-DM in our project
 
 <center>
+
 ![crisp dm in our project](.\diagrams\crisp-dm.PNG)
+
 </center>
 
 ### Business Understanding
@@ -313,7 +253,7 @@ Upload of image -> applying of chosen preprocessing step by user -> saving of im
 
 </center>
 
-# 5. Testing - Why we use Unit Testing and how we would possibly implement it
+# 5. TESTING - WHY WE USE UNIT TESTING AND HOW WE WOULD POSSIBLY IMPLEMENT IT
 
 In order to improve the quality of our software we introduce unit testing and write tests to automatically check if vital parts of our project are working as intended. Besides testing the initial code base before we deploy the project, we will use testing to assure that it continues to work after deployment. This is essential as we plan to expand the platform and hope to classify a wide range of birds in the future. If something stops working properly, we want to find out about it as soon as possible. In combination with continuous integration (CI) we provide the necessary tools to do that.
 
@@ -364,7 +304,9 @@ This platform is chosen since it is free of use up to a certain amount of space 
 ## 6.4 Architecture Overview
 
 <center>
+
 ![archtiecture overview](.\diagrams\architecture overview.PNG)
+
 </center>
 
 
