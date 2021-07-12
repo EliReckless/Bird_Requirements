@@ -337,6 +337,10 @@ In order to gain a better understanding of our proposed architecture, an overvie
 
 Once all the requirements are defined, it is important to request approval by all stakeholders with the latest version of the document to be able to avoid misunderstanding and incomplete coverage of the user requirements. In case of costs for a non-free deployment, it must be clarified who is being charged for it and on which basis.
 
+The approval process is essential to have the right set of requirements as well. In our project for the Bird Classifier we went through the different requirements (functional and non-functional) in order to discuss the individual elements to have a common understanding from all team members. The discussion lead to some re-adjustment and clarifications of some requirements. The official final approval of the project needs to given by the Project Manager or Project Owner. 
+
+Only with the approval process it is possible to get the input from all stakeholders and align on the specific needs. In addition, it gives the chances to evaluate the different opinions about the process and work needs. Having a good approval process in place will be beneficial for all team members because their opinion was appreciated and considered in the final decision of the requirements. This will lead to a high work commitment and a good understanding within the team. 
+
 
 
 
